@@ -1,6 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-const client = require('./client')
+const client = require('./yourClientFile')
 const app = express();
 
 
@@ -11,17 +11,17 @@ app.get('/', (req, res) => {
         secure: true,
         auth: {
             type: "OAuth2",
-            user: "mehrabmehadi13@gmail.com",
-            clientId: client.web.client_id,
-            clientSecret: client.web.client_secret,
-            refreshToken: "1/owJa6veaqu2Hp5qFvcgJGbzfTymONYRzXotd1r-HgOI"
+            user: "you_use_emailmehrabmehadi13@gmail.com",
+            clientId: yourClientFile.web.client_id,
+            clientSecret: yourClientFile.web.client_secret,
+            refreshToken: "refresh_token_from_oathplayground"
         }
     });
 
     let messageTemplate = {
-        to: "mihrabmiah13@gmail.com",
+        to: "reciepent_email",
         subject: "Hello",
-        text: "Hi from mehrab"
+        text: "Something"
     }
 
     smtpTransport.sendMail(messageTemplate, (err, info) => {
